@@ -8,3 +8,9 @@ exports.run = async (client, message, args) => {
     .addField("A Latencia de API é:", Math.floor(client.ping), false);
     message.channel.send(embed);
 }
+
+module.exports.help = {
+    name: "ping",
+    description: "Pong!!",
+    usage: "_ping"
+}
