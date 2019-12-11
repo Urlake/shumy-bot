@@ -19,7 +19,7 @@ client.on("guildDelete", guilds => {
 });
 
 client.on("message", message => {
-    if (message.content.startsWith("Shumy" || "shumy")) message.channel.send("Para me Ativar, use _ Antes dos Comandos!!");
+    if (message.content.startsWith("Shumy" || "shumy")) message.channel.send("Para me Ativar, use _ Antes dos Comandos!! \nUse _help para Saber meus Comandos...");
     if (message.channel.type === "dm") return;
     if (message.author.bot) return;
     if (!message.content.startsWith(config.prefix)) return;
@@ -36,4 +36,4 @@ client.on("message", message => {
     } finally {}
 });
 
-client.login(config.token)
+client.login(config.token);

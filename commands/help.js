@@ -12,12 +12,13 @@ module.exports.run = async(bot, message, args, con) => {
         }
 
         let embed = new Discord.RichEmbed();
+        embed.setDescription(`Se um Argumento está Entre !! Significa que é Nescessário Usa-lo \nSe um Argumento está Entre ?? Significa que não é Nescessário Usa-lo`);
 
         let result = jsfiles.forEach((f, i) => {
             let props = require(`./${f}`);
-            let filesArray = [props.help.name, props.help.description, props.help.usage]
+            let filesArray = [props.help.name, props.help.description]
             
-            embed.addField(`**${filesArray[0]}:**`, `Descrição: ${filesArray[1]} \nExemplo: ${filesArray[2]}`);
+            embed.addField(`**${filesArray[0]}:**`, `${filesArray[1]}`);
             
             //message.author.send(`**${filesArray[0]}** \n${filesArray[1]} \n${filesArray[2]}`);
         });
@@ -27,7 +28,6 @@ module.exports.run = async(bot, message, args, con) => {
 }
 
 module.exports.help = {
-    name: "Help",
-    description: "Quer Saber os meus Comandos? Então é isso que Deve Usar!!",
-    usage: "_help"
+    name: "_help",
+    description: "Mostra todos os Meus Comandos e como Usa-los"
 }

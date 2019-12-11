@@ -5,7 +5,6 @@ exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "Oi",
-    description: "Oi!!",
-    usage: "_oi"
+    name: "_oi",
+    description: "Fale um Oi para Mim :)"
 }
